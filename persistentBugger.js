@@ -3,23 +3,22 @@
 console.log(persistence(39) === 3); // because 3*9 = 27, 2*7 = 14, 1*4=4
 
 
- // (persistence(999) === 4) // because 9*9*9 = 729, 7*2*9 = 126,
+ console.log(persistence(999) === 4) // because 9*9*9 = 729, 7*2*9 = 126,
  //                        // 1*2*6 = 12, and finally 1*2 = 2
  //
- // persistence(4) === 0 // because 4 is already a one-digit number
+console.log(persistence(4) === 0) // because 4 is already a one-digit number
 
 
 function persistence(num) {
   let numero = num.toString()
   res = 0
-  for (var i = 0; 1 != numero.length; i++) {
-    console.log(i);
+  for (var i = 1; 1 < numero.length; i++) {
     num = numero.split("").reduce((a,b)=>a*b);
     numero = num
     numero = numero.toString()
     res = i
   }
-  res++
+  console.log(res);
   return res
 }
 
